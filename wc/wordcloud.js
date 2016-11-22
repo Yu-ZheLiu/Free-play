@@ -1,5 +1,5 @@
 function wordcloud(){
-  d3.csv("./Food.csv", function(data) {
+  d3.csv("https://yu-zheliu.github.io/Free-play/Food.csv", function(data) {
   console.log(data);
 
   d3.wordcloud()
