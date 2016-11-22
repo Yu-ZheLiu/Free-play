@@ -5,21 +5,16 @@
 	<meta charset="UTF-8">
 	<title>Cottages - Beach Resort Website Template</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-<<<<<<< HEAD
 	<script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="https://kuochiacheng.github.io/self-service-trip/D3CSS.css" type="text/css">
-	
+	<script src="https://yu-zheliu.github.io/Free-play/wc/wordcloud.js" type="text/javascript"></script>
+	<script src="https://yu-zheliu.github.io/Free-play/wc/d3.layout.cloud.js" type="text/javascript"></script>
+	<script src="https://yu-zheliu.github.io/Free-play/wc/wc.js" type="text/javascript"></script>
 	<script src="https://kuochiacheng.github.io/self-service-trip/D3JS.js" type="text/javascript"></script>
 </head>
 <body>
 <!--
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"> </script> -->
-=======
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-</head>
-<body>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"> </script>
->>>>>>> origin/master
 	<div id="background">
 		<div id="page">
 			<div id="sidebar">
@@ -43,7 +38,6 @@
 				<div class="section" id="wordcloud">
 				<h2>詞雲</h2>
 				</div>
-<<<<<<< HEAD
 				<!-- 橫條圖 by 劉宇哲-->
 				
 				<div class="section" id="barchart">
@@ -51,14 +45,6 @@
 					<script>
       					var pop_rate = [['景美',28.26],['士林',27.48],['師大',20.01],['三和',10.84]];
   						var div_data_bind = d3.select("#barchart").selectAll("div").data(pop_rate);
-=======
-				<div class="section">
-					<h2>夜市美食推薦</h2>
-					<p></p>
-					<script>
-      					var pop_rate = [['景美',28.26],['士林',27.48],['師大',20.01],['三和',10.84]];
-  						var div_data_bind = d3.select(".section").selectAll("div").data(pop_rate);
->>>>>>> origin/master
   						div_set = div_data_bind.enter().append("div");
   						div_data_bind.exit().remove();
   						div_set.text(function(d,i) {
@@ -72,28 +58,20 @@
     					 return (d[1] * 10)+"px";
   						});
   					</script>
-<<<<<<< HEAD
 				</div>
 				
 				<!-- 折線圖 by 郭家城 -->
 				<div class="section" id="linechart">
 					<h2>折線圖</h2>
-=======
-				
->>>>>>> origin/master
 				</div>
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
 <script>
 linechart();
 </script>
 <script>
 wordcloud();
 </script>
-=======
-	
->>>>>>> origin/master
 </body>
 </html>
