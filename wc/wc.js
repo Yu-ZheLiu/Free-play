@@ -4,7 +4,7 @@
         element = d3.select(selector),
         transitionDuration = 200,
         scale = 'sqrt',
-        fill = d3.scale.category20b(),
+        fill = d3.scale.Category20b(),
         layout = d3.layout.cloud(),
         fontSize = null,
         svg = null,
@@ -36,7 +36,7 @@
 
     wordcloud.fill = function(x) {
       if (!arguments.length) return fill;
-      fill = x == null ? d3.scale.category20b() : x;
+      fill = x == null ? d3.scale.Category20b() : x;
       return wordcloud;
     };
 
