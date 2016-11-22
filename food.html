@@ -5,8 +5,14 @@
 	<meta charset="UTF-8">
 	<title>Cottages - Beach Resort Website Template</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://kuochiacheng.github.io/self-service-trip/D3CSS.css" type="text/css">
+	
+	<script src="https://kuochiacheng.github.io/self-service-trip/D3JS.js" type="text/javascript"></script>
 </head>
 <body>
+<!--
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"> </script> -->
 	<div id="background">
 		<div id="page">
 			<div id="sidebar">
@@ -25,15 +31,45 @@
 			</div>
 
 			<div id="content">
-				<div class="header">
-					<img src="images/cottage.jpg" alt="">
+				
+				<!-- 詞雲 by 劉宇哲-->
+				<div class="section" id="wordcloud">
+				<h2>詞雲</h2>
 				</div>
-				<div class="section">
-					<h2>夜市美食推薦</h2>
-					<p></p>
+				<!-- 橫條圖 by 劉宇哲-->
+				
+				<div class="section" id="barchart">
+					<h2>橫條圖</h2>
+					<script>
+      					var pop_rate = [['景美',28.26],['士林',27.48],['師大',20.01],['三和',10.84]];
+  						var div_data_bind = d3.select("#barchart").selectAll("div").data(pop_rate);
+  						div_set = div_data_bind.enter().append("div");
+  						div_data_bind.exit().remove();
+  						div_set.text(function(d,i) {
+   						 return i + " / " + d[0];
+      					});
+      
+      					div_set.style("height", "20px");
+  						div_set.style("background", "orange");
+  						div_set.style("margin", "5px");
+  						div_set.style("width", function(d,i) {
+    					 return (d[1] * 10)+"px";
+  						});
+  					</script>
+				</div>
+				
+				<!-- 折線圖 by 郭家城 -->
+				<div class="section" id="linechart">
+					<h2>折線圖</h2>
 				</div>
 			</div>
 		</div>
 	</div>
+<script>
+linechart();
+</script>
+<script>
+wordcloud();
+</script>
 </body>
 </html>
