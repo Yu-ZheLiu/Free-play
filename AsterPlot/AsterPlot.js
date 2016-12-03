@@ -1,4 +1,3 @@
-function ap(){
 var width = 500,
     height = 500,
     radius = Math.min(width, height) / 2,
@@ -82,4 +81,3 @@ d3.csv('test.csv', function(error, data) {
     .text(Math.round(score));
 
 });
-}
