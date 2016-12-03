@@ -10,7 +10,7 @@ library(RCurl)
 #### Get the last page Number
 
 # MAC
-lastpage <- unlist(xpathSApply(htmlParse( getURL(paste0("https://www.ptt.cc/bbs/Food/index.html"))),  "//div[@class='btn-group btn-group-paging']/a",xmlGetAttr, "href"))[[2]]
+lastpage <- unlist(xpathSApply(htmlParse( getURL(paste0("https://www.ptt.cc/cls/9250"))),  "//div[@class='btn-group btn-group-paging']/a",xmlGetAttr, "href"))[[2]]
 # windows
 # lastpage <- unlist(xpathSApply(htmlParse( getURL(paste0("https://www.ptt.cc/bbs/CVS/index.html", cainfo = signatures))),  "//div[@class='btn-group btn-group-paging']/a",xmlGetAttr, "href"))[[2]]
 lastpage <- gsub(".*index", "", lastpage)
@@ -20,7 +20,7 @@ lastpage <- as.numeric(gsub("[.]*html", "", lastpage))+1
 #### Get link form each pages
 link.Food <- NULL
 for( i in (lastpage-99):lastpage){ # 先抓最新的100篇
-  url <- paste0("https://www.ptt.cc/bbs/Food/index", i, ".html")
+  url <- paste0("https://www.ptt.cc/cls/9250", i, ".html")
   html <- htmlParse(getURL(url))
   url.list <- xpathSApply(html, "//div[@class='title']/a[@href]", xmlAttrs)
   link.Food <- c(link.Food, paste('https://www.ptt.cc', url.list, sep=''))
@@ -130,4 +130,4 @@ dist_tdm_corpus <- dist(as.matrix(tdm_corpus))
 fit <- hclust(dist_tdm_corpus, method="ward")
 par(family = "STKaiti") ## only for Mac OS
 plot(fit)
-
+1
