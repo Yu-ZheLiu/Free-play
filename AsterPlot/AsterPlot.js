@@ -3,7 +3,7 @@ var width = 500,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
 
-var pie = d3.layout.pie()
+var pie = d3.pie()
     .sort(null)
     .value(function(d) { return d.width; });
 
