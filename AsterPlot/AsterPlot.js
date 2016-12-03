@@ -14,13 +14,13 @@ var tip = d3.tip()
     return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>";
   });
 
-var arc = d3.svg.arc()
+var arc = d3.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) { 
     return (radius - innerRadius) * (d.data.score / 100.0) + innerRadius; 
   });
 
-var outlineArc = d3.svg.arc()
+var outlineArc = d3.arc()
         .innerRadius(innerRadius)
         .outerRadius(radius);
 
