@@ -24,8 +24,9 @@ var outlineArc = d3.arc()
         .innerRadius(innerRadius)
         .outerRadius(radius);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("div").select("AsterPlot").append("svg")
     .attr("width", width)
+    .attr("class", "solidArc")
     .attr("height", height)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
