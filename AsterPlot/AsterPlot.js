@@ -24,7 +24,7 @@ var outlineArc = d3.arc()
         .innerRadius(innerRadius)
         .outerRadius(radius);
 
-var svg = d3.select(".try").select("div").append("svg")
+var svg = d3.select("div").append("svg")
     .attr("width", width)
     .attr("class", "solidArc")
     .attr("height", height)
