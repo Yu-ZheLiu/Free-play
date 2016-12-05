@@ -33,7 +33,7 @@ var svg = d3.select("div").append("svg")
 
 svg.call(tip);
 
-d3.csv('test.csv', function(error, data) {
+d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/AsterPlot/test.csv', function(error, data) {
 
   data.forEach(function(d) {
     d.id     =  d.id;
