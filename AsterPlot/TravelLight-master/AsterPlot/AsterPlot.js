@@ -5,7 +5,7 @@ var width = 500,
 
 var pie = d3.pie()
     .sort(null)
-    .value(function(d) { return d.width; });
+    .value(function(d) { return 1; });
 
 var tip = d3.tip()
   .attr('class', 'd3-tip')
@@ -36,12 +36,8 @@ svg.call(tip);
 d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/AsterPlot/test.csv', function(error, data) {
 
   data.forEach(function(d) {
-    d.id     =  d.id;
-    d.order  = +d.order;
     d.color  =  d.color;
-    d.weight = +d.weight;
     d.score  = +d.score;
-    d.width  = +d.weight;
     d.label  =  d.label;
   });
   // for (var i = 0; i < data.score; i++) { console.log(data[i].id) }
@@ -69,10 +65,10 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
   var score = 
     data.reduce(function(a, b) {
       //console.log('a:' + a + ', b.score: ' + b.score + ', b.weight: ' + b.weight);
-      return a + (b.score * b.weight); 
+      return a + (b.score ); 
     }, 0) / 
     data.reduce(function(a, b) { 
-      return a + b.weight; 
+      return a ; 
     }, 0);
 
   svg.append("svg:text")
