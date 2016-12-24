@@ -75,10 +75,4 @@ d3.csv('test.csv', function(error, data) {
       return a + b.weight; 
     }, 0);
 
-  svg.append("svg:text")
-    .attr("class", "aster-score")
-    .attr("dy", ".35em")
-    .attr("text-anchor", "middle") // text-align: right
-    .text(Math.round(score));
-
 });
