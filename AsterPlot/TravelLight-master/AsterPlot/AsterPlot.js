@@ -35,21 +35,20 @@ svg.call(tip);
 
 d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/AsterPlot/IPDifFood.csv', function(error, data) {
   data.forEach(function(d) {
-    d.color  =  function(){
+    d.score  = +d.score;
+    d.label  =  d.label;
+  });
+  // for (var i = 0; i < data.score; i++) { console.log(data[i].id) }
+    var getRandomColor=function(){
         return (function(m,s,c){
         return (c ? arguments.callee(m,s,c-1) : '#') +
         s[m.floor(m.random() * 16)]
       })(Math,'0123456789abcdef',5)
     };
-    d.score  = +d.score;
-    d.label  =  d.label;
-  });
-  // for (var i = 0; i < data.score; i++) { console.log(data[i].id) }
-  
   var path = svg.selectAll(".solidArc")
       .data(pie(data))
     .enter().append("path")
-      .attr("fill", function(d) { return d.data.color; })
+      .attr("fill", getRandomColor)
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
