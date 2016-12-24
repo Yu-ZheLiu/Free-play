@@ -33,8 +33,14 @@ var svg = d3.select("div").append("svg")
 
 svg.call(tip);
 
-d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/AsterPlot/test.csv', function(error, data) {
-
+d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/AsterPlot/IPDifFood.csv', function(error, data) {
+  var getRandomColor = function(){
+    return  '#' +
+    (function(color){
+      return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)])
+      && (color.length == 6) ?  color : arguments.callee(color);
+    })('');
+  }
   data.forEach(function(d) {
     d.color  =  d.color;
     d.score  = +d.score;
@@ -70,5 +76,5 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
     data.reduce(function(a, b) { 
       return a ; 
     }, 0);
-    
+
 });
