@@ -70,11 +70,5 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
     data.reduce(function(a, b) { 
       return a ; 
     }, 0);
-
-  svg.append("svg:text")
-    .attr("class", "aster-score")
-    .attr("dy", ".35em")
-    .attr("text-anchor", "middle") // text-align: right
-    .text(Math.round(score));
-
+    
 });
