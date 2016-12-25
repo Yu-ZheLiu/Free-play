@@ -52,7 +52,6 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
-      .attr("div",tip.show)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
