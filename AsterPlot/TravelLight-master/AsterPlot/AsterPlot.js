@@ -33,7 +33,7 @@ var svg = d3.select("div").append("svg")
 
 svg.call(tip);
 
-d3.csv('https://github.com/Yu-ZheLiu/Free-play/tree/master/AsterPlot/TravelLight-master/AsterPlot/restaurant/Restaurant.csv', function(error, data) {
+d3.csv('https://github.com/Yu-ZheLiu/Free-play/tree/master/AsterPlot/TravelLight-master/AsterPlot/test.csv', function(error, data) {
   data.forEach(function(d) {
     d.score  = +d.score;
     d.label  =  d.label;
