@@ -15,7 +15,7 @@ var tip = d3.tip()
   });
 //以下是縮放功能
   var x,y,s;
-  var zoom = d3.behavior.zoom()
+  var zoom = d3.zoom()
     .translate([0, 0])
     .scaleExtent([1, 10])
     .scale(1)
