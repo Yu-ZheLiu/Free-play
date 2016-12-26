@@ -1,4 +1,4 @@
-var width = 500,
+var width = 100%,
     height = 500,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
@@ -17,7 +17,7 @@ var tip = d3.tip()
 var arc = d3.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) { 
-    return (radius - innerRadius) * (d.data.score /13000.0) + innerRadius; 
+    return (radius - innerRadius) * (d.data.score /6000.0) + innerRadius; 
   });
 
 var outlineArc = d3.arc()
