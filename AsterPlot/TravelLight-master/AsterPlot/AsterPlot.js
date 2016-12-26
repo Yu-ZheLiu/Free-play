@@ -13,6 +13,21 @@ var tip = d3.tip()
   .html(function(d) {
     return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>";
   });
+//以下是縮放功能
+  var x,y,s;
+  var zoom = d3.behavior.zoom()
+    .translate([0, 0])
+    .scaleExtent([1, 10])
+    .scale(1)
+    .on("zoom", zoomed);
+
+  function zoomed() {
+    x=d3.event.translate[0];
+    y=d3.event.translate[1];
+    s=d3.event.scale;
+    container.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
+  }
+//縮放功能結束
 
 var arc = d3.arc()
   .innerRadius(innerRadius)
@@ -74,19 +89,4 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
     data.reduce(function(a, b) { 
       return a ; 
     }, 0);
-  //以下是縮放功能
-  var x,y,s;
-  var zoom = d3.behavior.zoom()
-    .translate([0, 0])
-    .scaleExtent([1, 10])
-    .scale(1)
-    .on("zoom", zoomed);
-
-  function zoomed() {
-    x=d3.event.translate[0];
-    y=d3.event.translate[1];
-    s=d3.event.scale;
-    container.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
-  }
-
 });
