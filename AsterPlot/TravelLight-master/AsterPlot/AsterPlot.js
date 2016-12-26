@@ -15,7 +15,7 @@ var tip = d3.tip()
   });
 //以下是縮放功能
   var zoom = d3.zoom().on("zoom",function(){
-    svg.attr("transform","translate("+d3.event.transform.x / 2+","+d3.event.transform.y/2+") scale("+d3.event.transform.k+")")
+    svg.attr("transform",d3.event.transform)
   });
  
 //縮放功能結束
@@ -34,9 +34,8 @@ var svg = d3.select("div").append("svg")
     .attr("width", '100%')
     .attr("class", "solidArc")
     .attr("height", '100%')
-     .append("g")
-    .call(zoom);
-    //.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
     
 
 svg.call(tip);
@@ -60,6 +59,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
+      .call(zoom); //here
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
