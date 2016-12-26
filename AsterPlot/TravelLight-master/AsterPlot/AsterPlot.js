@@ -25,11 +25,12 @@ var outlineArc = d3.arc()
         .outerRadius(radius);
 
 var svg = d3.select("div").append("svg")
-    .attr("width", width)
+    .attr("width", '100%')
     .attr("class", "solidArc")
-    .attr("height", height)
+    .attr("height", '100%')
     .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    .call(zoom);
 
 svg.call(tip);
 
@@ -87,15 +88,5 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
     s=d3.event.scale;
     container.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
   }
-
-  var svg = d3.select('body')
-  .append('svg')
-  .attr({
-    'width':'100%',
-    'height':'100%'
-  }).style({
-    'border':'1px solid #000'
-  })
-  .call(zoom);
 
 });
