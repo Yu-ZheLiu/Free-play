@@ -31,9 +31,9 @@ var outlineArc = d3.arc()
         .outerRadius(radius);
 
 var svg = d3.select("div").append("svg")
-    .attr("width", '100%')
+    .attr("width", height)
     .attr("class", "solidArc")
-    .attr("height", '100%')
+    .attr("height", width)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
     
@@ -59,7 +59,6 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
-      .call(zoom) //here
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
