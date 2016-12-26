@@ -31,9 +31,9 @@ var outlineArc = d3.arc()
         .outerRadius(radius);
 
 var svg = d3.select("div").append("svg")
-    .attr("width", '100%')
+    .attr("width", '50%')
     .attr("class", "solidArc")
-    .attr("height", '100%')
+    .attr("height", '50%')
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
     .call(zoom);
