@@ -1,5 +1,5 @@
-var width = 300,
-    height = 300,
+var width = 500,
+    height = 500,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
 
@@ -15,7 +15,7 @@ var tip = d3.tip()
   });
 //以下是縮放功能
   var zoom = d3.zoom().on("zoom",function(){
-    svg.attr("transform",d3.event.transform)
+    svg.attr("transform","translate("+d3.event.transform.x / 2+","+d3.event.transform.y/2+") scale("+d3.event.transform.k+")")
   });
  
 //縮放功能結束
@@ -31,12 +31,13 @@ var outlineArc = d3.arc()
         .outerRadius(radius);
 
 var svg = d3.select("div").append("svg")
-    .attr("width", "50%")
+    .attr("width", '100%')
     .attr("class", "solidArc")
-    .attr("height", "50%")
+    .attr("height", '100%')
+    .call(zoom);
     .append("g")
     //.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-    .call(zoom);
+    
 
 svg.call(tip);
 
