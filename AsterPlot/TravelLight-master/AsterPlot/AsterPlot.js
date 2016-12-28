@@ -34,9 +34,9 @@ var svg = d3.select("div").append("svg")
     .attr("width", height)
     .attr("class", "solidArc")
     .attr("height", width)
-    .append("g")
-    //.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-    .call(zoom);
+    .append("g");
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    //.call(zoom);
     
 
 svg.call(tip);
@@ -60,18 +60,18 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
-      .call(zoom)
+      //.call(zoom)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
   var outerPath = svg.selectAll(".outlineArc")
       .data(pie(data))
-    .enter().append("path")
+      .enter().append("path")
       .attr("fill", "none")
       .attr("stroke", "gray")
       .attr("class", "outlineArc")
-      .attr("d", outlineArc)
-      .call(zoom);  
+      .attr("d", outlineArc);
+      //.call(zoom);  
 
 
   // calculate the weighted mean score
