@@ -25,7 +25,6 @@ var arc = d3.arc()
   .outerRadius(function (d) { 
     return (radius - innerRadius) * (d.data.score /6000.0) + innerRadius; 
   })
-  .call(zoom);
 
 var outlineArc = d3.arc()
         .innerRadius(innerRadius)
@@ -62,6 +61,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
+      .call(zoom)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
