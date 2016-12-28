@@ -29,7 +29,6 @@ var arc = d3.arc()
 var outlineArc = d3.arc()
         .innerRadius(innerRadius)
         .outerRadius(radius)
-        .call(zoom);
 
 var svg = d3.select("div").append("svg")
     .attr("width", height)
@@ -71,7 +70,8 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("fill", "none")
       .attr("stroke", "gray")
       .attr("class", "outlineArc")
-      .attr("d", outlineArc);  
+      .attr("d", outlineArc)
+      .call(zoom);  
 
 
   // calculate the weighted mean score
