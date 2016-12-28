@@ -24,18 +24,21 @@ var arc = d3.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) { 
     return (radius - innerRadius) * (d.data.score /6000.0) + innerRadius; 
-  });
+  })
+  .call(zoom);
 
 var outlineArc = d3.arc()
         .innerRadius(innerRadius)
-        .outerRadius(radius);
+        .outerRadius(radius)
+        .call(zoom);
 
 var svg = d3.select("div").append("svg")
     .attr("width", height)
     .attr("class", "solidArc")
     .attr("height", width)
     .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    //.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    .call(zoom);
     
 
 svg.call(tip);
