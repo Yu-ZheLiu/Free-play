@@ -13,12 +13,6 @@ var tip = d3.tip()
   .html(function(d) {
     return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>";
   });
-//以下是縮放功能
-  var zoom = d3.zoom().on("zoom",function(){
-    svg.attr("transform",d3.event.transform)
-  });
- 
-//縮放功能結束
 
 var arc = d3.arc()
   .innerRadius(innerRadius)
@@ -31,12 +25,11 @@ var outlineArc = d3.arc()
         .outerRadius(radius)
 
 var svg = d3.select("div").append("svg")
-    .attr("width", height)
+    .attr("width", width)
     .attr("class", "solidArc")
-    .attr("height", width)
+    .attr("height", height)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-    .call(zoom);
     
 
 svg.call(tip);
@@ -60,7 +53,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
-      //.call(zoom)
+      .on('click',alert('你点击了这个按钮');)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
@@ -71,7 +64,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("stroke", "gray")
       .attr("class", "outlineArc")
       .attr("d", outlineArc);
-      //.call(zoom);  
+ 
 
 
   // calculate the weighted mean score
