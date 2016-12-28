@@ -34,8 +34,9 @@ var svg = d3.select("div").append("svg")
     .attr("width", height)
     .attr("class", "solidArc")
     .attr("height", width)
-    .append("g");
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    .append("g")
+    .zoom().on("zoom",function({svg.attr("transform",d3.event.transform/2)}));
+    //.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
     //.call(zoom);
     
 
