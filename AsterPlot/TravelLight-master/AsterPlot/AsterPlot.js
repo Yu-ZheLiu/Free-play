@@ -55,7 +55,10 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("d", arc)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
-      .on('click', function() {DifFood();} );
+      .on('click', function(d,i) {
+        alert(d);
+        DifFood();
+      } );
 
   var outerPath = svg.selectAll(".outlineArc")
       .data(pie(data))
