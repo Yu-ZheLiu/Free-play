@@ -58,7 +58,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .on('click', function(d,i) {
         if( d.data.label == "其他美食" )
         {otherFood();}
-        if(d.data.label == "日本料理")
+        if(d.data.label == "日式料理")
         {JapanFood();}
         if(d.data.label =="素食")
         {VegFood();}
