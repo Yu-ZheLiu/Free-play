@@ -1,5 +1,5 @@
-var width = 200,
-    height = 200,
+var width = '100%',
+    height = '100%',
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
 
@@ -30,6 +30,7 @@ var svg = d3.select("div").append("svg")
     .attr("height", height)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    //.on('click',alert('OK'))
     
 
 svg.call(tip);
@@ -53,7 +54,6 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
-      .on('click',alert('OK'))
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
