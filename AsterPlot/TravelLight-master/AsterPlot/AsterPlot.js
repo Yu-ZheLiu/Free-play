@@ -56,8 +56,16 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
       .on('click', function(d,i) {
-        alert(d);
-        DifFood();
+        if( d.data.label == "其他美食" )
+        {otherFood();}
+        if(d.data.label == "日本料理")
+        {JapanFood();}
+        if(d.data.label =="素食")
+        {VegFood();}
+        if(d.data.label =="冰品、飲料、甜湯")
+        {sweetFood();}
+        if(d.data.label =="異國料理")
+        {DifFood();}
       } );
 
   var outerPath = svg.selectAll(".outlineArc")
