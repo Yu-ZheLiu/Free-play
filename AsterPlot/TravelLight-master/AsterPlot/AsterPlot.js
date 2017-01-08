@@ -52,7 +52,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
-      .attr("e", tip.show)
+      .on('click', tip.show)
       //.on('mouseout', tip.hide)
       .on('click', function(d,i) {
         if(d.data.label == "其他美食" )
