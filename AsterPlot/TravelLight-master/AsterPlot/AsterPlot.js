@@ -1,4 +1,4 @@
-var width = parseInt(d3.select(".solidArc").style("width"), 10),
+var width = 400,
     height = 400,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
