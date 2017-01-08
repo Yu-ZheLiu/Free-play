@@ -17,7 +17,7 @@ var tip = d3.tip()
 var arc = d3.svg.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) { 
-    return (radius - innerRadius) * (d.data.score /6000.0) + innerRadius; 
+    return (radius - innerRadius) * (d.data.score /12000.0) + innerRadius; 
   })
 
 var outlineArc = d3.svg.arc()
@@ -61,10 +61,12 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
         {JapanFood();}
         if(d.data.label =="素食")
         {VegFood();}
-        if(d.data.label =="冰品、飲料、甜湯")
+        if(d.data.label =="甜食")
         {sweetFood();}
         if(d.data.label =="異國料理")
         {DifFood();}
+        if(d.data.label =="中式料理")
+        {ChineseFood();}
       } );
 
   var outerPath = svg.selectAll(".outlineArc")
