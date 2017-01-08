@@ -1,5 +1,5 @@
-var width = 500,
-    height = 500,
+var width = parseInt(d3.select(".solidArc").style("width"), 10),
+    height = parseInt(d3.select(".solidArc").style("height"), 10),
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
 
