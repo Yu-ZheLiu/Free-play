@@ -1,4 +1,4 @@
-var width = 400,
+var width = width = parseInt(d3.select(".AsterPlot").style("width"), 10),
     height = 400,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
