@@ -91,7 +91,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
     }, 0);
 
  
-  arcs.append('text')
+  arc.append('text')
   .attr('transform', function(d){
     return 'translate('+ arc.centroid(d) +')';
      //centroid()任何形狀的中心點
