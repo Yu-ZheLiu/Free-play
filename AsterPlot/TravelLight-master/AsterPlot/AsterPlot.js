@@ -68,6 +68,15 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
         {DifFood();}
         if(d.data.label =="中式料理")
         {ChineseFood();}
+      })
+      .append('text')
+      .attr('transform', function(d){
+        return 'translate('+ arc.centroid(d) +')';
+      //centroid()任何形狀的中心點
+      })
+      .attr('text-anchor', 'middle')
+      .text(function(d){
+        return  d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>"; //在每個形狀的中央插入文字
       });
 
   var outerPath = svg.selectAll(".outlineArc")
@@ -89,15 +98,4 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
     data.reduce(function(a, b) { 
       return a ; 
     }, 0);
-
- 
-  svg.append('text')
-  .attr('transform', function(d){
-    return 'translate('+ arc.centroid(d) +')';
-     //centroid()任何形狀的中心點
-  })
-  .attr('text-anchor', 'middle')
-  .text(function(d){
-    return  d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>"; //在每個形狀的中央插入文字
-  })
 });
