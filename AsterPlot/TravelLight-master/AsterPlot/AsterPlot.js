@@ -92,17 +92,33 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
 
   svg.append("svg:text")
     .attr("class", "AsterPlot")
-    .attr("dy",radius*0.7)
-    .attr("dx",radius*0.8)
+    .attr("dy",radius*-0.8)
+    .attr("dx",radius*0.65)
+    .text("其他美食");
+  svg.append("svg:text")
+    .attr("class", "AsterPlot")
+    .attr("dy",radius*0.1)
+    .attr("dx",radius*1.05)
     .text("日式料理");
   svg.append("svg:text")
     .attr("class", "AsterPlot")
     .attr("dy",radius*1.1)
-    .attr("dx",radius*0.2)
-    .text("其他美食");
+    .attr("dx",radius*0.4)
+    .text("素食");
   svg.append("svg:text")
     .attr("class", "AsterPlot")
     .attr("dy",radius*1.1)
-    .attr("dx",radius*0.2)
-    .text("素食");
+    .attr("dx",radius*-0.8)
+    .text("甜食");
+  svg.append("svg:text")
+    .attr("class", "AsterPlot")
+    .attr("dy",radius*0.1)
+    .attr("dx",radius*-1.7)
+    .text("異國料理");
+  svg.append("svg:text")
+    .attr("class", "AsterPlot")
+    .attr("dy",radius*-0.8)
+    .attr("dx",radius*-1.3)
+    .text("中式料理");
+
 });
