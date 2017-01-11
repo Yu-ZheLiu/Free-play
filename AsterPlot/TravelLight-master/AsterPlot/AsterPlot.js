@@ -82,7 +82,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
   var lines=text.split(" ")
     return lines
   }
-  var text = arcs.append("svg:text")
+  var text = arc.append("svg:text")
       .attr("transform", function(d) {
           d.outerRadius = outerRadius + 75;
           d.innerRadius = outerRadius + 70;
