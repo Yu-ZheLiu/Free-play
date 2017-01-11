@@ -52,7 +52,8 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
-      .on('mouseover', tip.show)
+      //.on('mouseover', tip.show)
+      //.on('mouseover', tip.show)
       //.on('mouseout', tip.hide)
       .on('click', function(d,i) {
         if(d.data.label == "其他美食" )
@@ -67,7 +68,8 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
         {DifFood();}
         if(d.data.label =="中式料理")
         {ChineseFood();}
-      } );
+      });
+      tip.show;
 
   var outerPath = svg.selectAll(".outlineArc")
       .data(pie(data))
