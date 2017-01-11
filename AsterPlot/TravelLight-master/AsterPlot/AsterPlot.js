@@ -83,6 +83,29 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "outlineArc")
       .attr("d", outlineArc);
  
+  function wordwrap(text) {
+  var lines=text.split(" ")
+    return lines
+  }
+  var text = arcs.append("svg:text")
+      .attr("transform", function(d) {
+          d.outerRadius = outerRadius + 75;
+          d.innerRadius = outerRadius + 70;
+           return "translate(" + arc.centroid(d) + ")";
+      })
+      .attr("text-anchor", "middle") //center the text on it's origin
+      .style("fill", "black")
+      .style("font", "bold 12px Arial")
+      .each(function (d, i) {
+        var lines = wordwrap(dataSet[i].legendLabel)
+        for (var i = 0; i < lines.length; i++) {
+          d3.select(this).append("tspan")
+            .attr("dy",13)
+            .attr("x",function(d) { 
+              return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>"; })
+              .text(lines[i])
+        }
+      })
 
 
   // calculate the weighted mean score
