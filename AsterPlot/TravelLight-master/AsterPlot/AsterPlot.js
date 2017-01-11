@@ -25,8 +25,8 @@ var outlineArc = d3.svg.arc()
         .outerRadius(radius)
 
 var svg = d3.select(".AsterPlot").append("svg")
-    .attr("width", width)
-    .attr("height", height)
+    .attr("width", width*1.1)
+    .attr("height", height*1.1)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
         
@@ -52,9 +52,9 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "solidArc")
       .attr("stroke", "gray")
       .attr("d", arc)
+      .on('mouseover', tip.show)
       //.on('mouseover', tip.show)
-      //.on('mouseover', tip.show)
-      //.on('mouseout', tip.hide)
+      .on('mouseout', tip.hide)
       .on('click', function(d,i) {
         if(d.data.label == "其他美食" )
         {otherFood();}
@@ -78,30 +78,7 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .attr("class", "outlineArc")
       .attr("d", outlineArc);
  
-  function wordwrap(text) {
-  var lines=text.split(" ")
-    return lines
-  }
-  var text = arc.append("svg:text")
-      .attr("transform", function(d) {
-          d.outerRadius = outerRadius + 75;
-          d.innerRadius = outerRadius + 70;
-           return "translate(" + arc.centroid(d) + ")";
-      })
-      .attr("text-anchor", "middle") //center the text on it's origin
-      .style("fill", "black")
-      .style("font", "bold 12px Arial")
-      .each(function (d, i) {
-        var lines = wordwrap(dataSet[i].legendLabel)
-        for (var i = 0; i < lines.length; i++) {
-          d3.select(this).append("tspan")
-            .attr("dy",13)
-            .attr("x",function(d) { 
-              return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>"; })
-              .text(lines[i])
-        }
-      })
-
+  
 
   // calculate the weighted mean score
   var score = 
@@ -112,4 +89,20 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
     data.reduce(function(a, b) { 
       return a ; 
     }, 0);
+
+  svg.append("svg:text")
+    .attr("class", "AsterPlot")
+    .attr("dy",radius*0.7)
+    .attr("dx",radius*0.8)
+    .text("日式料理");
+  svg.append("svg:text")
+    .attr("class", "AsterPlot")
+    .attr("dy",radius*1.1)
+    .attr("dx",radius*0.2)
+    .text("其他美食");
+  svg.append("svg:text")
+    .attr("class", "AsterPlot")
+    .attr("dy",radius*1.1)
+    .attr("dx",radius*0.2)
+    .text("素食");
 });
