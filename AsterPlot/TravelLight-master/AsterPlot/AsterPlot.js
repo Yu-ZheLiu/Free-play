@@ -78,7 +78,8 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       .text("甜食"
         //function(d){
         //return  d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>"; //在每個形狀的中央插入文字
-      });
+      //}
+      );
 
   var outerPath = svg.selectAll(".outlineArc")
       .data(pie(data))
