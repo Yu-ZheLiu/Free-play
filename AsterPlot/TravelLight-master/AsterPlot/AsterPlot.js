@@ -75,8 +75,9 @@ d3.csv('https://yu-zheliu.github.io/Free-play/AsterPlot/TravelLight-master/Aster
       //centroid()任何形狀的中心點
       })
       .attr('text-anchor', 'middle')
-      .text(function(d){
-        return  d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>"; //在每個形狀的中央插入文字
+      .text("甜食"
+        //function(d){
+        //return  d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>"; //在每個形狀的中央插入文字
       });
 
   var outerPath = svg.selectAll(".outlineArc")
